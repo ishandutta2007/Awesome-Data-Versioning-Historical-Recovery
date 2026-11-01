@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d18" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="primary-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="accent-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2" />
+    </linearGradient>
+
+    <linearGradient id="pulse-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="0.1" />
+    </linearGradient>
+
+    <!-- Filters & Glow -->
+    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glow-title" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#38bdf8" flood-opacity="0.3" />
+    </filter>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.8" stroke-opacity="0.45" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(40px, -25px) scale(1.1); }
+    }
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0px, 0px) scale(1); }
+      50% { transform: translate(-35px, 20px) scale(1.15); }
+    }
+    @keyframes dashLine {
+      to { stroke-dashoffset: -120; }
+    }
+    @keyframes pulseRing {
+      0% { r: 12px; opacity: 0.8; }
+      50% { r: 24px; opacity: 0.2; }
+      100% { r: 12px; opacity: 0.8; }
+    }
+    @keyframes nodeBeacon {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
+    .orb-1 { animation: floatOrb1 9s ease-in-out infinite; }
+    .orb-2 { animation: floatOrb2 12s ease-in-out infinite; }
+    .animated-dash { animation: dashLine 4s linear infinite; stroke-dasharray: 8 6; }
+    .beacon { animation: nodeBeacon 2.5s ease-in-out infinite; }
+    .ring-pulse { animation: pulseRing 3s ease-in-out infinite; transform-origin: center; }
+  </style>
+
+  <!-- Deep Dark Background -->
+  <rect width="1200" height="420" fill="url(#bg-grad)" rx="16" />
+  
+  <!-- Subtle Grid -->
+  <rect width="1200" height="420" fill="url(#grid)" rx="16" />
+
+  <!-- DYNAMIC / ANIMATED BACKGROUND ELEMENTS (strictly behind text) -->
+  <!-- Ambient Floating Glowing Orbs -->
+  <g class="orb-1" opacity="0.45">
+    <circle cx="180" cy="120" r="140" fill="url(#accent-cyan)" filter="url(#glow-cyan)" />
+  </g>
+  <g class="orb-2" opacity="0.35">
+    <circle cx="1020" cy="300" r="160" fill="url(#pulse-grad)" filter="url(#glow-cyan)" />
+  </g>
+
+  <!-- Animated Data Branching / Time-Travel Flow Line (Background visualization) -->
+  <g opacity="0.35">
+    <!-- Main trunk timeline -->
+    <path d="M 60 360 L 1140 360" stroke="#334155" stroke-width="3" stroke-linecap="round" />
+    <path d="M 60 360 L 1140 360" stroke="#38bdf8" stroke-width="2" class="animated-dash" />
+
+    <!-- Branch alpha: time-travel fork -->
+    <path d="M 280 360 C 350 360, 390 310, 460 310 L 800 310 C 870 310, 910 360, 980 360" 
+          fill="none" stroke="#818cf8" stroke-width="2" class="animated-dash" />
+
+    <!-- Secondary fast rollback branch -->
+    <path d="M 520 310 C 580 310, 620 270, 700 270 L 880 270" 
+          fill="none" stroke="#c084fc" stroke-width="1.5" stroke-dasharray="4 4" />
+
+    <!-- Commit / Snapshot Nodes -->
+    <circle cx="280" cy="360" r="6" fill="#38bdf8" />
+    <circle cx="460" cy="310" r="6" fill="#818cf8" />
+    <circle cx="700" cy="270" r="5" fill="#c084fc" />
+    <circle cx="800" cy="310" r="6" fill="#818cf8" />
+    <circle cx="980" cy="360" r="6" fill="#38bdf8" />
+    
+    <!-- Pulsing target recovery beacon -->
+    <circle cx="700" cy="270" r="16" fill="none" stroke="#c084fc" stroke-width="1.5" class="ring-pulse" />
+  </g>
+
+  <!-- FOREGROUND CONTENT: High-contrast, crystal clear typography -->
+  <!-- Top Category Tag Pill -->
+  <g transform="translate(60, 52)">
+    <rect width="320" height="32" rx="16" fill="#1e293b" fill-opacity="0.8" stroke="#38bdf8" stroke-width="1" />
+    <circle cx="16" cy="16" r="5" fill="#38bdf8" class="beacon" />
+    <text x="32" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+          font-size="12" font-weight="700" fill="#bae6fd" letter-spacing="1.2">
+      DATA ARCHITECTURE &amp; RESILIENCE
+    </text>
+  </g>
+
+  <!-- Main Headline Title -->
+  <text x="60" y="142" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="46" font-weight="800" fill="url(#primary-grad)" filter="url(#glow-title)" letter-spacing="-0.5">
+    Awesome Data Versioning
+  </text>
+  <text x="60" y="196" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="40" font-weight="800" fill="#f8fafc" letter-spacing="-0.5">
+    &amp; Historical Recovery ⏪
+  </text>
+
+  <!-- Subtitle / Value Proposition -->
+  <text x="60" y="244" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" 
+        font-size="17" font-weight="400" fill="#94a3b8" letter-spacing="0.2">
+    Curated guide to Time Travel, Git-like Data Branching, Snapshot Isolation &amp; Zero-Loss Restoration.
+  </text>
+
+  <!-- Feature Highlights (Interactive Badges) -->
+  <g transform="translate(60, 276)">
+    <!-- Pill 1: Time Travel -->
+    <g transform="translate(0, 0)">
+      <rect width="138" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="69" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="12" font-weight="600" fill="#38bdf8" text-anchor="middle">⚡ Time Travel</text>
+    </g>
+
+    <!-- Pill 2: Git for Data -->
+    <g transform="translate(150, 0)">
+      <rect width="148" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="74" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="12" font-weight="600" fill="#818cf8" text-anchor="middle">🌿 Zero-Copy Branching</text>
+    </g>
+
+    <!-- Pill 3: Snapshot Isolation -->
+    <g transform="translate(310, 0)">
+      <rect width="158" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="79" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="12" font-weight="600" fill="#c084fc" text-anchor="middle">📸 Snapshot Isolation</text>
+    </g>
+
+    <!-- Pill 4: Open Lakehouse -->
+    <g transform="translate(480, 0)">
+      <rect width="168" height="30" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="84" y="19" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" 
+            font-size="12" font-weight="600" fill="#34d399" text-anchor="middle">🏰 Open Table Lakehouse</text>
+    </g>
+  </g>
+</svg>
