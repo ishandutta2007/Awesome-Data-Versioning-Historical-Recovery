@@ -32,65 +32,32 @@ Contributions welcome! Open a PR to add/update entries. Keep descriptions factua
 
 ## Table of Contents
 
+- [Sector Overview & Market Dynamics](#sector-overview--market-dynamics)
 - [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
 - [Open-Source GitHub Projects](#open-source-github-projects)
-
 - [How to Contribute](#how-to-contribute)
-
 - [Disclaimer](#disclaimer)
+
+
+
+## Sector Overview & Market Dynamics
+
+The global data versioning and dataset recovery sector is estimated at **$527M to $2.3B+** (as part of a broader **$15B–$31B+** data backup, recovery, and time-travel resilience market), driven by strict regulatory auditing, ML model reproducibility, and ransomware point-in-time recovery. The market exhibits **moderate fragmentation with high concentration around core lakehouse/cloud data warehouse platforms**: hyper-scalers and giants (Snowflake, Databricks, Microsoft/GitHub) dominate standard analytics workloads with winner-take-most dynamics, while specialized open-table and Git-for-data providers (lakeFS/Treeverse, DoltHub, DVC) cater to niche multi-cloud and Kubernetes-native versioning workflows.
 
 
 
 ## SaaS/Hosted Platforms
 
-
-
-- **Snowflake Time Travel**
-
-  **Native historical data access** within Snowflake. Query data as of a past timestamp or before a specific statement; restore tables, schemas, and databases. **Pricing**: **Included in storage costs**—historical data is billed as retained bytes; retention defaults to **1 day (Standard Edition)** or up to **90 days (Enterprise Edition)** . **Free tier**: Trial credits. **Best for**: Snowflake customers wanting zero-config recovery and audit—**trade-off**: storage costs accrue for retained history; transient tables limit retention to 1 day to control costs .
-
-
-
-- **Databricks Delta Lake Time Travel**
-
-  **Version and timestamp queries** over Delta Lake tables. Query by version number (`VERSION AS OF`) or timestamp (`TIMESTAMP AS OF`); default retention **30 days** (configurable); `DESCRIBE HISTORY` lists available versions . **Pricing**: **Open-source Delta Lake is free** (Apache 2.0); Databricks managed plans start at **$0.07/DBU (Standard)** or **$0.22/DBU (Premium)** . **Free tier**: Delta Lake open source; Databricks Community Edition limited. **Best for**: Databricks and Spark teams wanting table-level versioning—**trade-off**: `VACUUM` is required to reclaim storage from old versions .
-
-
-
-- **lakeFS Cloud**
-
-  **Managed Git-like versioning for data lakes**. **Pricing**: **Open-source lakeFS is free forever**; **Enterprise is contact-sales** (unlimited seats, support, SLA) . **Free tier**: Yes, open-source edition. **Best for**: teams wanting managed branching over object storage—**trade-off**: enterprise pricing opaque; storage costs from cloud provider remain separate.
-
-
-
-- **Nessie (Commercial)**
-
-  **Git-like catalog for Iceberg** with managed options. **Pricing**: **On-prem is custom**; **Team plan $80/seat/month** (shared skill layer, team analytics) . **Note**: The pricing page at nessielabs.com appears to describe a different product (AI context sync) in some tiers; verify what you are buying. **Free tier**: 7-day trial. **Best for**: teams wanting managed Nessie—**trade-off**: product identity confusion in pricing tiers; verify scope.
-
-
-
-- **Pachyderm Enterprise (HPE)**
-
-  **Data versioning and pipeline platform** for Kubernetes. **Pricing**: **Community Edition is free and open source** (Apache 2.0); **Enterprise is custom commercial** (Console UI, RBAC/OIDC, multi-cluster DR, 24/7 HPE SLA) . **Free tier**: Yes, Community Edition. **Best for**: ML teams wanting reproducible pipelines with data versioning—**trade-off**: Enterprise requires HPE engagement; Community lacks enterprise auth.
-
-
-
-- **DoltHub Pro**
-
-  **Hosted Dolt databases** (Git for data). **Pricing**: **Public databases free**; **Pro: first 100 MB free, then $5/month up to 5 GB, $1/GB/month beyond** . **Free tier**: Public databases; 100 MB private storage. **Best for**: teams wanting SQL with Git-like version control—**trade-off**: storage-based pricing; small free tier.
-
-
-
-- **Git LFS (GitHub)**
-
-  **Large file versioning** within Git. **Pricing**: **Free tier: 10 GiB storage + 10 GiB bandwidth/month** (GitHub Free/Pro); **Team/Enterprise: 250 GiB each**; overages billed per GiB . **Free tier**: Yes, 10 GiB. **Best for**: versioning large files alongside code—**trade-off**: not designed for datasets; storage and bandwidth costs accumulate.
-
-
-
-- **Apache Iceberg (Managed)**
-
-  **Open table format** with snapshot isolation and time travel. **Pricing**: **Specification is free**; managed services (Snowflake, Databricks, AWS) charge for compute and storage; retention and snapshot expiry are configurable but **object-store lifecycle rules must be coordinated** to avoid orphaned files . **Free tier**: N/A (specification). **Best for**: lakehouse architectures needing vendor-neutral table versioning—**trade-off**: snapshot retention costs are your responsibility.
+| Product | Company Valuation / Revenue Scale | Starting Pricing | Free Tier Limits | Key Highlights & Trade-offs |
+| :--- | :--- | :--- | :--- | :--- |
+| **Git LFS (GitHub)** | Parent (Microsoft): ~$3.1T market cap; GitHub standalone ARR: **$2.0B+** | **$0.07/GiB/month** for storage + **$0.0875/GiB** for bandwidth out (metered beyond included allowance) | **Free Forever**: 10 GiB storage & 10 GiB monthly bandwidth included for GitHub Free/Pro accounts (250 GiB each for Enterprise) | Integrated directly into GitHub repositories; best for versioning large binary assets with code, but bandwidth/storage costs add up for massive datasets. |
+| **Databricks Delta Lake Time Travel** | **$134B valuation**; ARR: **$5.4B+** | Managed clusters start at **$0.07/DBU** (Standard) or **$0.22/DBU** (Premium) | **14-day free trial** with up to **$400 credits**; plus **Databricks Free Edition** (free forever with serverless compute daily quotas, 1 workspace/metastore) | Native table-level versioning & rollback (`VERSION AS OF`); open-core Delta Lake is Apache-2.0; requires regular `VACUUM` to clean old Parquet files. |
+| **Snowflake Time Travel** | **~$50B–$60B market cap**; Annual Revenue: **$3.63B+** (FY2025) | On-demand Standard edition starts at **$2.00/credit** compute + **$23/TB/month** storage | **30-day free trial** with **$400 usage credits** (no permanent free storage/compute tier) | Native historical time travel queries and database cloning up to 1 day (Standard) or 90 days (Enterprise); zero configuration, but historical retained bytes add storage costs. |
+| **Pachyderm Enterprise (HPE)** | Parent (HPE): **~$32B market cap**; Annual Revenue: **$34.3B** | Enterprise licensing is quote-based upon contact (historically starting on custom annual contracts per cluster/worker core) | **Free Forever**: Community Edition is 100% free & open-source on Kubernetes (unlimited pipelines, lacks enterprise RBAC/SSO) | Data-driven pipelines on Kubernetes with automated data provenance and lineage; requires Kubernetes infrastructure expertise. |
+| **Nessie (Dremio Cloud Catalog)** | Dremio Valuation: **$2.0B**; Total funding: $410M | Standard Pay-As-You-Go starts at **$0.20/DCU-hour** (e.g., 2XSmall engine at $3.20/hour) | **Free Forever**: Dremio Cloud Standard includes free catalog usage, capped at up to 10 users, 200 tables, and 1,000 views (plus 14-day Enterprise trial) | Catalog-level Git semantics (branch, tag, merge) for Apache Iceberg; enables isolated multi-table transactional commits without data duplication. |
+| **Apache Iceberg (AWS Managed / S3 Tables & Athena)** | Amazon / AWS: ~$2.0T market cap; AWS ARR: **$100B+** | Serverless pay-as-you-go: S3 Tables at **$0.023/GB/month**; Athena queries at **$5.00/TB scanned** (min 10 MB per query) | **12-month AWS Free Tier**: 5 GB S3 Standard storage, 20,000 GET requests, 2,000 PUT requests/month (Athena SQL queries have no free tier) | Open specification; zero license fee; vendor-neutral snapshot isolation; storage lifecycle rules and snapshot expiration must be managed to avoid orphan files. |
+| **lakeFS Cloud** | Total funding: **$43M** (Series B in 2025; Dell / Norwest backed) | lakeFS Team Edition starts at **$499/month** (lakeFS Cloud Enterprise via quote) | **30-day free trial** for lakeFS Cloud / Team; lakeFS Community Edition is **free forever** self-hosted (capped at 1 user) | Git-like branching, merging, and commits over AWS S3, Azure Blob, or GCS object storage; versions unstructured and structured data alike without byte duplication. |
+| **DoltHub Pro** | Total funding: **$21M–$23M** (Series B) | DoltHub Pro starts at **$5/month** (covers up to 5 GB; $1/GB/month beyond); Hosted Dolt instances start at **$50/month** | **Free Forever**: First 100 MB of private storage is free; public databases are 100% free with unlimited size; CLI open source is completely free | "Git for data" with full MySQL/PostgreSQL compatibility; supports branch, merge, diff, and cell-level conflict resolution directly in SQL. |
 
 
 
