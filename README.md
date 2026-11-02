@@ -11,7 +11,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery?style=flat-square&logo=github&color=gold" alt="GitHub Stars"/></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery/stargazers"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery?style=flat-square&logo=github&color=gold" alt="GitHub_Stars"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery/network/members"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery?style=flat-square&logo=github&color=blue" alt="GitHub Forks"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery/issues"><img src="https://img.shields.io/github/issues/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery?style=flat-square" alt="Issues"/></a>
   <a href="https://github.com/ishandutta2007/Awesome-Data-Versioning-Historical-Recovery/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=flat-square" alt="License"/></a>
@@ -83,79 +83,79 @@ Self-hosted, transparent data versioning frameworks, transactional table engines
 
 ### Top Tier Version Control & Engines
 
-1. ### 🐬 **[Dolt](https://github.com/dolthub/dolt)** [![GitHub stars](https://img.shields.io/github/stars/dolthub/dolt?style=social&color=white)](https://github.com/dolthub/dolt/stargazers)
+1. ### 🐬 **[Dolt](https://github.com/dolthub/dolt)** [![GitHub_Stars](https://img.shields.io/github/stars/dolthub/dolt?style=social&color=white)](https://github.com/dolthub/dolt/stargazers)
    - **Description**: **Git for Data** — A SQL database with true Git version control semantics (branching, merging, diffing, and conflict resolution directly in SQL). It operates as a drop-in replacement for MySQL (and PostgreSQL via Doltgres).
    - **Key Features**: Prolly tree storage architecture; cell-level diff and three-way merging; instant snapshot branching; audit compliance.
    - **Tech Stack & License**: Go | Apache-2.0
    - **Best For**: Collaborative tabular databases, crowdsourced data, configuration management, and regression testing.
 
-2. ### 🦉 **[DVC (Data Version Control)](https://github.com/iterative/dvc)** [![GitHub stars](https://img.shields.io/github/stars/iterative/dvc?style=social&color=white)](https://github.com/iterative/dvc/stargazers)
+2. ### 🦉 **[DVC (Data Version Control)](https://github.com/iterative/dvc)** [![GitHub_Stars](https://img.shields.io/github/stars/iterative/dvc?style=social&color=white)](https://github.com/iterative/dvc/stargazers)
    - **Description**: **Git-based data & ML model management** that seamlessly connects Git with external remote storage (S3, GCS, Azure, SSH, HDFS).
    - **Key Features**: Lightweight `.dvc` tracking files committed to Git while huge artifacts live on object storage; pipeline DAG execution (`dvc.yaml`); ML experiment tracking.
    - **Tech Stack & License**: Python | Apache-2.0
    - **Best For**: Data science and MLOps teams needing dataset reproducibility without altering their Git workflows.
 
-3. ### 📦 **[Git LFS (Large File Storage)](https://github.com/git-lfs/git-lfs)** [![GitHub stars](https://img.shields.io/github/stars/git-lfs/git-lfs?style=social&color=white)](https://github.com/git-lfs/git-lfs/stargazers)
+3. ### 📦 **[Git LFS (Large File Storage)](https://github.com/git-lfs/git-lfs)** [![GitHub_Stars](https://img.shields.io/github/stars/git-lfs/git-lfs?style=social&color=white)](https://github.com/git-lfs/git-lfs/stargazers)
    - **Description**: The official Git extension for managing large files, replacing blobs with tiny text pointers inside your Git repository.
    - **Key Features**: Native Git command integration; lazy-cloning of assets; broad third-party server support (GitHub, GitLab, Bitbucket, self-hosted servers).
    - **Tech Stack & License**: Go | MIT
    - **Best For**: Tracking binary ML models, media assets, and moderate datasets directly in source code repositories.
 
-4. ### 🧊 **[Apache Iceberg](https://github.com/apache/iceberg)** [![GitHub stars](https://img.shields.io/github/stars/apache/iceberg?style=social&color=white)](https://github.com/apache/iceberg/stargazers)
+4. ### 🧊 **[Apache Iceberg](https://github.com/apache/iceberg)** [![GitHub_Stars](https://img.shields.io/github/stars/apache/iceberg?style=social&color=white)](https://github.com/apache/iceberg/stargazers)
    - **Description**: High-performance open table format for huge analytic datasets that delivers ACID transactions and table-level time travel queries.
    - **Key Features**: Snapshot isolation; time travel and rollback (`AS OF`); hidden partitioning; schema evolution without rewriting data; multi-engine support (Spark, Trino, Flink, Presto).
    - **Tech Stack & License**: Java / Python / Rust | Apache-2.0
    - **Best For**: Modern multi-engine Lakehouse architectures demanding vendor-neutral table versioning.
 
-5. ### 🔺 **[Delta Lake](https://github.com/delta-io/delta)** [![GitHub stars](https://img.shields.io/github/stars/delta-io/delta?style=social&color=white)](https://github.com/delta-io/delta/stargazers)
+5. ### 🔺 **[Delta Lake](https://github.com/delta-io/delta)** [![GitHub_Stars](https://img.shields.io/github/stars/delta-io/delta?style=social&color=white)](https://github.com/delta-io/delta/stargazers)
    - **Description**: Open-source storage framework that enables building a Lakehouse architecture with compute engines including Spark, PrestoDB, Flink, and Trino.
    - **Key Features**: ACID transactions via write-ahead transaction log; snapshot time travel query and rollback; unified batch and streaming; compaction and schema enforcement.
    - **Tech Stack & License**: Scala, Java, Python | Apache-2.0
    - **Best For**: Spark-heavy big data pipelines and streaming lakehouses requiring reliable rollback capabilities.
 
-6. ### 🔥 **[Apache Hudi](https://github.com/apache/hudi)** [![GitHub stars](https://img.shields.io/github/stars/apache/hudi?style=social&color=white)](https://github.com/apache/hudi/stargazers)
+6. ### 🔥 **[Apache Hudi](https://github.com/apache/hudi)** [![GitHub_Stars](https://img.shields.io/github/stars/apache/hudi?style=social&color=white)](https://github.com/apache/hudi/stargazers)
    - **Description**: Transactional data lake platform bringing database and data warehouse capabilities to data lakes, with streaming ingest and change data capture (CDC).
    - **Key Features**: Incremental data processing; point-in-time timeline and time travel queries; file-level versioning and index-assisted upserts/deletes.
    - **Tech Stack & License**: Java | Apache-2.0
    - **Best For**: Fast, low-latency streaming ingest and mutable CDC pipelines on object storage.
 
-7. ### 🐘 **[Pachyderm (Community)](https://github.com/pachyderm/pachyderm)** [![GitHub stars](https://img.shields.io/github/stars/pachyderm/pachyderm?style=social&color=white)](https://github.com/pachyderm/pachyderm/stargazers)
+7. ### 🐘 **[Pachyderm (Community)](https://github.com/pachyderm/pachyderm)** [![GitHub_Stars](https://img.shields.io/github/stars/pachyderm/pachyderm?style=social&color=white)](https://github.com/pachyderm/pachyderm/stargazers)
    - **Description**: Kubernetes-native data versioning and reproducible data processing pipelines.
    - **Key Features**: Git-like commit system for data; automatic data lineage and provenance tracking; parallelized pipeline transforms triggered on data commits.
    - **Tech Stack & License**: Go | Apache-2.0
    - **Best For**: Complex multi-stage AI/ML pipelines requiring strict audit trails and data provenance.
 
-8. ### 🎯 **[Aim](https://github.com/aimhubio/aim)** [![GitHub stars](https://img.shields.io/github/stars/aimhubio/aim?style=social&color=white)](https://github.com/aimhubio/aim/stargazers)
+8. ### 🎯 **[Aim](https://github.com/aimhubio/aim)** [![GitHub_Stars](https://img.shields.io/github/stars/aimhubio/aim?style=social&color=white)](https://github.com/aimhubio/aim/stargazers)
    - **Description**: An easy-to-use, supercharged, open-source AI metadata, dataset, and experiment tracker with a performant exploratory UI.
    - **Key Features**: Tracks 100,000+ metrics and artifacts; compares dataset versions, hyper-parameters, and model checkpoints; self-hosted with minimal footprint.
    - **Tech Stack & License**: Python, TypeScript | Apache-2.0
    - **Best For**: Deep learning practitioners looking for fast, self-hosted tracking and artifact version comparison.
 
-9. ### 🌊 **[lakeFS](https://github.com/treeverse/lakeFS)** [![GitHub stars](https://img.shields.io/github/stars/treeverse/lakeFS?style=social&color=white)](https://github.com/treeverse/lakeFS/stargazers)
+9. ### 🌊 **[lakeFS](https://github.com/treeverse/lakeFS)** [![GitHub_Stars](https://img.shields.io/github/stars/treeverse/lakeFS?style=social&color=white)](https://github.com/treeverse/lakeFS/stargazers)
    - **Description**: **Git-like version control for object storage** (S3, Azure Blob, GCS). Delivers atomic branching, commits, merges, and rollbacks for petabyte-scale data lakes.
    - **Key Features**: Zero-copy branching; pre-commit/pre-merge data validation webhooks (Data CI/CD); format-agnostic (works with Parquet, ORC, images, raw JSON).
    - **Tech Stack & License**: Go | Apache-2.0
    - **Best For**: Data platform teams needing isolated production testing environments and instant rollback of corrupted ETL runs.
 
-10. ### 🕸️ **[TerminusDB](https://github.com/terminusdb/terminusdb)** [![GitHub stars](https://img.shields.io/github/stars/terminusdb/terminusdb?style=social&color=white)](https://github.com/terminusdb/terminusdb/stargazers)
+10. ### 🕸️ **[TerminusDB](https://github.com/terminusdb/terminusdb)** [![GitHub_Stars](https://img.shields.io/github/stars/terminusdb/terminusdb?style=social&color=white)](https://github.com/terminusdb/terminusdb/stargazers)
     - **Description**: Open-source graph and document database engine engineered with Git-like revision control and immutable data structures.
     - **Key Features**: Delta-encoding commit graph; branch and merge documents; GraphQL and WOQL query support; schema checking.
     - **Tech Stack & License**: Rust, Prolog | Apache-2.0
     - **Best For**: Knowledge graph applications, semantic graphs, and regulated document workflows demanding full auditability.
 
-11. ### 🌟 **[Apache Polaris](https://github.com/apache/polaris)** [![GitHub stars](https://img.shields.io/github/stars/apache/polaris?style=social&color=white)](https://github.com/apache/polaris/stargazers)
+11. ### 🌟 **[Apache Polaris](https://github.com/apache/polaris)** [![GitHub_Stars](https://img.shields.io/github/stars/apache/polaris?style=social&color=white)](https://github.com/apache/polaris/stargazers)
     - **Description**: A vendor-neutral, open-source catalog for Apache Iceberg tables that provides centralized multi-engine access control and table version discovery.
     - **Key Features**: Iceberg REST Catalog compliant; cross-cloud cross-engine metadata governance; zero vendor lock-in.
     - **Tech Stack & License**: Java | Apache-2.0
     - **Best For**: Centralized lakehouse governance across Snowflake, Spark, Flink, and Trino.
 
-12. ### 🦕 **[Project Nessie](https://github.com/projectnessie/nessie)** [![GitHub stars](https://img.shields.io/github/stars/projectnessie/nessie?style=social&color=white)](https://github.com/projectnessie/nessie/stargazers)
+12. ### 🦕 **[Project Nessie](https://github.com/projectnessie/nessie)** [![GitHub_Stars](https://img.shields.io/github/stars/projectnessie/nessie?style=social&color=white)](https://github.com/projectnessie/nessie/stargazers)
     - **Description**: Transactional catalog for data lakes bringing **Git-like multi-table versioning** to Apache Iceberg and Delta Lake.
     - **Key Features**: Atomic multi-table commits; catalog-level branching (`AT BRANCH`) and merging; snapshot isolation for concurrent writers.
     - **Tech Stack & License**: Java | Apache-2.0
     - **Best For**: Multi-table ETL transactions where multiple related tables must be updated and committed atomically.
 
-13. ### 🐶 **[DagsHub Client](https://github.com/DagsHub/client)** [![GitHub stars](https://img.shields.io/github/stars/DagsHub/client?style=social&color=white)](https://github.com/DagsHub/client/stargazers)
+13. ### 🐶 **[DagsHub Client](https://github.com/DagsHub/client)** [![GitHub_Stars](https://img.shields.io/github/stars/DagsHub/client?style=social&color=white)](https://github.com/DagsHub/client/stargazers)
     - **Description**: Open-source client library for streaming, logging, and versioning data, code, and ML models with DagsHub, DVC, and Git.
     - **Key Features**: Direct data streaming without downloading entire datasets; seamless integration with MLflow and DVC; Git-like data interaction.
     - **Tech Stack & License**: Python | Apache-2.0
